@@ -1,0 +1,102 @@
+import api from "@/api";
+const hr = {
+  role: "hr",
+  role_id: "93",
+  tableListConfig: [
+    { prop: "id", label: "序号" },
+    { prop: "cram_id", label: "补习班期别" },
+    { prop: "cram_location", label: "上课地点" },
+    { prop: "start_time", label: "上课开始时间" },
+    { prop: "end_time", label: "上课截止时间" },
+    { prop: "tutor", label: "班主任" },
+    { prop: "cram_status", label: "节点", slot: "cram_status" },
+    { prop: "operate", label: "操作", slot: "operate" },
+  ],
+  tableAddConfig: [
+    { prop: "id", label: "No" },
+    { prop: "prisoner", label: "工号" },
+    { prop: "prisonser_name", label: "姓名" },
+    { prop: "prisonser_department", label: "部门" },
+    { prop: "prisonser_job", label: "职位" },
+    { prop: "sop", label: "学习课程SOP", slot: "sop" },
+    { prop: "total_score", label: "SOP综合考试成绩" },
+    { prop: "reply_score", label: "结业答辩成绩" },
+    { prop: "is_complete", label: "是否可以结业", slot: "is_complete" },
+    { prop: "operate", label: "附件（答辩材料）", slot: "operate" },
+  ],
+  inquire: {
+    cram_id: {
+      title: "期别：",
+      type: "searchSelect",
+      key: "cram_id",
+      value: "",
+    },
+    start_time: {
+      title: "开始上课时间：",
+      type: "timePick",
+      key: "start_time",
+      value: "",
+    },
+    end_time: {
+      title: "上课截止时间：",
+      type: "timePick",
+      value: "",
+      key: "end_time",
+    },
+  },
+  inquireProt: api.hrGetRecord,
+  saveProt: api.saveStudentInfo,
+  inquireTest: api.selectTestRecordList,
+  addList: {
+    cram_id: {
+      key: "cram_id",
+      title: "上课期别:",
+      type: "text",
+      value: "",
+      verify: /^[\s\S]*.*[^\s][\s\S]*$/,
+    },
+    start_time: {
+      key: "start_time",
+      title: "上课开始时间:",
+      type: "text",
+      value: "",
+      verify: /\d{4}-\d{2}-\d{2}/,
+    },
+    end_time: {
+      key: "end_time",
+      title: "上课截止时间:",
+      type: "text",
+      value: "",
+      verify: /\d{4}-\d{2}-\d{2}/,
+    },
+    cram_name: {
+      key: "cram_name",
+      title: "补习班主题:",
+      type: "text",
+      value: "",
+      verify: /^[\s\S]*.*[^\s][\s\S]*$/,
+    },
+    cram_location: {
+      key: "cram_location",
+      title: "上课地点:",
+      type: "text",
+      value: "",
+      verify: /^[\s\S]*.*[^\s][\s\S]*$/,
+    },
+    tutor: {
+      key: "tutor",
+      title: "班主任:",
+      type: "text",
+      verify: /^[\s\S]*.*[^\s][\s\S]*$/,
+      options: [
+        { value: "20631-钟明均", label: "钟明均" },
+        { value: "10103-韩亚香", label: "韩亚香" },
+        { value: "6587-许辉", label: "许辉" },
+        { value: "13489-王冬梅", label: "王冬梅" },
+        { value: "17761-何芬芬", label: "何芬芬" },
+      ],
+    },
+  },
+};
+
+export { hr };
