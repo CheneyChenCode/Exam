@@ -1,0 +1,26 @@
+#testBottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+#TestInstruction {
+    height: 100%;
+    width: 100%;
+}
+#noBegin{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#noBeginInfo{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 16%);
+    overflow: auto;
+}

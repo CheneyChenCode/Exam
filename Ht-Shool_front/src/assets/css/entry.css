@@ -1,0 +1,13 @@
+.m-header {
+    height: 50px;
+    line-height: 50px;
+    background: lightseagreen;
+    color: #fff;
+}
+
+.m-header-icon {
+    position: absolute;
+    top: 16px;
+    left: 6px;
+    font-size: 18px;
+}
